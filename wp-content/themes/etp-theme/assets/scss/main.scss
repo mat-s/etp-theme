@@ -1,0 +1,19 @@
+// Entry point for ETP Theme styles.
+
+// Example variables can go here
+$brand-color: #0d3b66;
+
+body {
+  color: #1f2933;
+  background-color: #f8fafc;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
