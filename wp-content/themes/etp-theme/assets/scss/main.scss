@@ -1,19 +1,14 @@
 // Entry point for ETP Theme styles.
 
-// Example variables can go here
-$brand-color: #0d3b66;
+@import 'base/variables';
+@import 'base/typography';
 
-body {
-  color: #1f2933;
-  background-color: #f8fafc;
-}
+@import 'layout/structure';
 
-a {
-  color: $brand-color;
-  text-decoration: none;
+@import 'components/buttons';
 
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
+@import 'bricks-elements/hero';
+
+@import 'utilities/helpers';
+
+@import 'pages/home';
