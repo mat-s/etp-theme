@@ -72,7 +72,8 @@ class ETP_Hero_Section extends \Bricks\Element
       $image_alt = $title;
     }
 
-    $this->set_attribute('_root', 'class', 'etp-hero');
+    // Root classes; include Bricks section class for consistency.
+    $this->set_attribute('_root', 'class', 'etp-hero brxe-section');
 
     if ($image_url) {
       $this->set_attribute('_root', 'style', '--hero-image:url(' . esc_url($image_url) . ')');
@@ -81,7 +82,7 @@ class ETP_Hero_Section extends \Bricks\Element
     ob_start();
     ?>
     <section <?php echo $this->render_attributes('_root'); ?>>
-      <div class="etp-hero__content">
+      <div class="etp-hero__content brxe-container" role="presentation">
         <?php if ($title) : ?>
           <h1 class="etp-hero__title"><?php echo esc_html($title); ?></h1>
         <?php endif; ?>
@@ -90,12 +91,6 @@ class ETP_Hero_Section extends \Bricks\Element
           <div class="etp-hero__text"><?php echo wp_kses_post(wpautop($text)); ?></div>
         <?php endif; ?>
       </div>
-
-      <?php if ($image_url) : ?>
-        <div class="etp-hero__image">
-          <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" loading="lazy" />
-        </div>
-      <?php endif; ?>
     </section>
     <?php
     echo ob_get_clean();
