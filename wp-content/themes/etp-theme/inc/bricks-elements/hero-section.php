@@ -80,19 +80,28 @@ class ETP_Hero_Section extends \Bricks\Element
     }
 
     ob_start();
-    ?>
+?>
     <section <?php echo $this->render_attributes('_root'); ?>>
-      <div class="etp-hero__content brxe-container" role="presentation">
-        <?php if ($title) : ?>
-          <h1 class="etp-hero__title"><?php echo esc_html($title); ?></h1>
-        <?php endif; ?>
+      <div class="etp-hero__content" role="presentation">
+        <div class="etp-hero__title">
+          <?php if ($title) : ?>
+            <h1 class="etp-hero__headline"><?php echo esc_html($title); ?></h1>
+          <?php endif; ?>
+        </div>
 
-        <?php if ($text) : ?>
-          <div class="etp-hero__text"><?php echo wp_kses_post(wpautop($text)); ?></div>
+        <div class="etp-hero__text">
+          <?php if ($text) : ?>
+            <?php echo wp_kses_post(wpautop($text)); ?>
+          <?php endif; ?>
+        </div>
+      </div>
+      <div class="etp-hero__media">
+        <?php if ($image_url) : ?>
+          <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" loading="lazy" decoding="async" />
         <?php endif; ?>
       </div>
     </section>
-    <?php
+<?php
     echo ob_get_clean();
   }
 }

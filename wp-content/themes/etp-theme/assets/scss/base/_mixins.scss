@@ -1,0 +1,21 @@
+@mixin respond-min($value) {
+  $size: map-get($breakpoints, $value);
+  @if $size == null {
+    $size: $value;
+  }
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin respond-max($value) {
+  $size: map-get($breakpoints, $value);
+  @if $size == null {
+    $size: $value;
+  }
+
+  @media (max-width: $size) {
+    @content;
+  }
+}
