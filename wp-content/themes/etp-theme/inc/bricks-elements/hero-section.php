@@ -84,6 +84,14 @@ class ETP_Hero_Section extends \Bricks\Element
     <section <?php echo $this->render_attributes('_root'); ?>>
       <div class="etp-hero__content" role="presentation">
         <div class="etp-hero__title">
+          <?php
+          $breadcrumbs = function_exists('etp_get_breadcrumbs') ? etp_get_breadcrumbs() : '';
+          if ($breadcrumbs) :
+          ?>
+            <div class="etp-hero__breadcrumbs">
+              <?php echo $breadcrumbs; ?>
+            </div>
+          <?php endif; ?>
           <?php if ($title) : ?>
             <h1 class="etp-hero__headline"><?php echo esc_html($title); ?></h1>
           <?php endif; ?>

@@ -105,7 +105,19 @@ Text Domain: etp-theme
   height: 100%;
   object-fit: cover;
 }
-.etp-hero__title h1 {
+.etp-hero__breadcrumbs {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-160);
+  margin-bottom: var(--spacing-2xl);
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+@media (max-width: 1280px) {
+  .etp-hero__breadcrumbs {
+    margin-bottom: var(--spacing-xl);
+  }
+}
+.etp-hero__headline {
   margin: 0;
   font-size: var(--font-size-8xl);
   font-weight: 600;
@@ -113,17 +125,17 @@ Text Domain: etp-theme
   line-height: var(--line-height-125);
 }
 @media (max-width: 1280px) {
-  .etp-hero__title h1 {
+  .etp-hero__headline {
     font-size: var(--font-size-7xl);
   }
 }
 @media (max-width: 900px) {
-  .etp-hero__title h1 {
+  .etp-hero__headline {
     font-size: var(--font-size-5xl);
   }
 }
 @media (max-width: 600px) {
-  .etp-hero__title h1 {
+  .etp-hero__headline {
     font-size: var(--font-size-3xl);
   }
 }

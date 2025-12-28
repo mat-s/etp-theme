@@ -25,6 +25,7 @@ add_action('after_setup_theme', function () {
   
   // Load modular theme functionality.
   $etp_includes = [
+    'helpers.php',
     'disable-comments.php',
     'bricks-setup.php',
   ];
