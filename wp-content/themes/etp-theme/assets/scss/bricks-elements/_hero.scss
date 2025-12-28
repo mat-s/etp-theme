@@ -68,11 +68,11 @@
 
     @include respond-max(tablet-portrait) {
       padding: var(--spacing-xl) var(--spacing-4xl) var(--spacing-4xl) var(--spacing-4xl);
-      flex-basis: 100%;
     }
-
+    
     @include respond-max(mobile-landscape) {
       padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-2xl) var(--spacing-lg);
+      flex-basis: 100%;
     }
   }
 
@@ -80,7 +80,7 @@
     flex-basis: 45%;
     z-index: 1;
 
-    @include respond-max(tablet-portrait) {
+    @include respond-max(mobile-landscape) {
       flex-basis: 100%;
     }
     img {

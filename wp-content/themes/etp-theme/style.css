@@ -83,19 +83,19 @@ Text Domain: etp-theme
 @media (max-width: 900px) {
   .etp-hero__content {
     padding: var(--spacing-xl) var(--spacing-4xl) var(--spacing-4xl) var(--spacing-4xl);
-    flex-basis: 100%;
   }
 }
 @media (max-width: 600px) {
   .etp-hero__content {
     padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-2xl) var(--spacing-lg);
+    flex-basis: 100%;
   }
 }
 .etp-hero__media {
   flex-basis: 45%;
   z-index: 1;
 }
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .etp-hero__media {
     flex-basis: 100%;
   }
@@ -159,5 +159,28 @@ Text Domain: etp-theme
 }
 .etp-hero__image {
   display: none;
+}
+
+.etp-text {
+  padding-right: var(--spacing-xl);
+  padding-left: var(--spacing-xl);
+}
+@media (max-width: 1280px) {
+  .etp-text {
+    padding-right: var(--spacing-4xl);
+    padding-left: var(--spacing-4xl);
+  }
+}
+@media (max-width: 600px) {
+  .etp-text {
+    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+  }
+}
+@media (max-width: 320px) {
+  .etp-text {
+    padding-right: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+  }
 }
 /*# sourceMappingURL=style.css.map */

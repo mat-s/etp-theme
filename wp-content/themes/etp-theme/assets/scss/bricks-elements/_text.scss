@@ -1,0 +1,19 @@
+// Styles for the ETP Text element.
+.etp-text {
+  padding-right: var(--spacing-xl);
+  padding-left: var(--spacing-xl);
+  @include respond-max(desktop) {
+    padding-right: var(--spacing-4xl);
+    padding-left: var(--spacing-4xl);
+  }
+
+  @include respond-max(mobile-landscape) {
+    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+  }
+
+  @include respond-max(mobile-portrait) {
+    padding-right: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+  }
+}
