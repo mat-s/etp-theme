@@ -1,5 +1,8 @@
+@use "sass:map";
+@use "./variables" as vars;
+
 @mixin respond-min($value) {
-  $size: map-get($breakpoints, $value);
+  $size: map.get(vars.$breakpoints, $value);
   @if $size == null {
     $size: $value;
   }
@@ -10,7 +13,7 @@
 }
 
 @mixin respond-max($value) {
-  $size: map-get($breakpoints, $value);
+  $size: map.get(vars.$breakpoints, $value);
   @if $size == null {
     $size: $value;
   }

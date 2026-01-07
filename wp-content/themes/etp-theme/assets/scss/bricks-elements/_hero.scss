@@ -1,3 +1,5 @@
+@use "../base/mixins" as *;
+
 .etp-hero {
   position: relative;
   display: flex;

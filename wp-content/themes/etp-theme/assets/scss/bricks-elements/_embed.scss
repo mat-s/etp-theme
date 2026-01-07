@@ -1,7 +1,7 @@
 @use "../base/mixins" as *;
 
-// Styles for the ETP Text element.
-.etp-text {  
+// Styles for the embed element.
+.etp-embed {
   padding-right: var(--spacing-xl);
   padding-left: var(--spacing-xl);
   @include respond-max(desktop) {

@@ -1,0 +1,87 @@
+@use "../base/mixins" as *;
+
+// Styles for the sidebar container element.
+.etp-sidebar-container {
+  // display: grid;
+  // grid-template-columns: calc(25% - (var(--spacing-5xl) / 2)) calc(75% - (var(--spacing-5xl) / 2));
+  // grid-template-areas: "sidebar main";
+  // gap: 0 var(--spacing-5xl);
+  // grid-auto-flow: row;
+  // align-items: start;
+  display: block;
+  overflow: hidden;
+
+  padding-top: var(--spacing-4xl);
+  padding-bottom: var(--spacing-7xl);
+
+  @include respond-min(tablet-portrait) {
+    .sidebar-element {
+      // grid-column: 1;
+      width: 25%; //calc(25% - (var(--spacing-5xl) / 2));
+      padding-right: 0;
+    }
+
+    .etp-cta-banner.sidebar-element {
+      margin-bottom: 360px;
+      margin-top: 0;
+
+      .etp-cta-banner__inner {
+        display: block;
+      }
+
+      .etp-cta-banner__headline {
+        font-size: var(--font-size-lg);
+        line-height: var(--line-height-140);
+      }
+
+      .etp-cta-banner__image {
+        width: 100%;
+      }
+
+      .etp-cta-banner__button {
+        margin-top: var(--spacing-2xl);
+      }
+    }
+
+    & > *:not(.sidebar-element) {
+      // grid-column: 2;
+      float: right;
+      width: calc(75% - (var(--spacing-5xl) / 2));
+    }
+  }
+
+  // @include respond-max(desktop-wide) {
+  //   padding-left: var(--spacing-xl);
+  // }
+
+  // @include respond-max(desktop) {
+  //   padding-left: var(--spacing-4xl);
+  // }
+
+  @include respond-max(tablet-portrait) {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-6xl);
+
+    .sidebar-element {
+      width: 100%;
+      margin-bottom: unset;
+    }
+
+    & > *:not(.sidebar-element) {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  @include respond-max(mobile-landscape) {
+    // padding-left: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-5xl);
+  }
+
+  @include respond-max(mobile-portrait) {
+    // padding-left: var(--spacing-lg);
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-4xl);
+  }
+}

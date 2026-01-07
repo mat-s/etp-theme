@@ -1,17 +1,21 @@
 // Entry point for ETP Theme styles.
 
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/typography';
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/typography';
 
-@import 'layout/structure';
+@use 'layout/structure';
 
-@import 'components/buttons';
+@use 'components/buttons';
 
-@import 'bricks-elements/hero';
-@import 'bricks-elements/text';
-@import 'bricks-elements/newsletter-cta';
+@use 'bricks-elements/hero';
+@use 'bricks-elements/text';
+@use 'bricks-elements/newsletter-cta';
+@use 'bricks-elements/sidebar-container';
+@use 'bricks-elements/embed';
+@use 'bricks-elements/content-cards';
+@use 'bricks-elements/cta-banner';
 
-@import 'utilities/helpers';
+@use 'utilities/helpers';
 
-@import 'pages/home';
+@use 'pages/home';

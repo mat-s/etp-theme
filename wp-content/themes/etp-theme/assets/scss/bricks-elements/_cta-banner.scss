@@ -1,0 +1,142 @@
+@use "../base/mixins" as *;
+
+.etp-cta-banner {
+  $self: &;
+
+  padding-right: var(--spacing-xl);
+  padding-left: var(--spacing-xl);
+
+  margin-top: var(--spacing-4xl);
+  margin-bottom: var(--spacing-4xl);
+
+  @include respond-max(desktop) {
+    padding-right: var(--spacing-4xl);
+    padding-left: var(--spacing-4xl);
+  }
+
+  @include respond-max(mobile-landscape) {
+    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+  }
+
+  @include respond-max(mobile-portrait) {
+    padding-right: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+  }
+
+  &__inner {
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+
+    @include respond-max(mobile-portrait) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    position: relative;
+    min-height: 100%;
+    width: 33%;
+
+    @include respond-max(mobile-landscape) {
+      width: 48%;
+    }
+
+    @include respond-max(mobile-portrait) {
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    padding: var(--spacing-xl);
+    display: block;
+  }
+
+  &__headline {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    line-height: var(--line-height-130);
+    letter-spacing: -0.5px;
+    margin-bottom: var(--spacing-md);
+
+    @include respond-max(tablet-portrait) {
+      margin-bottom: var(--spacing-base);
+    }
+
+    @include respond-max(mobile-landscape) {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  &__text {
+    font-size: var(--font-size-base);
+  }
+
+  &__button {
+    font-size: var(--font-size-base);
+    border-radius: 5px;
+    display: inline-flex;
+    gap: 10px;
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-lg);
+
+    margin-top: var(--spacing-4xl);
+    transition: all 0.3s ease;
+
+    @include respond-max(mobile-portrait) {
+      margin-top: var(--spacing-2xl);
+    }
+  }
+
+  &__button-icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &.is-light {
+    #{ $self }__inner {
+      background: var(--bricks-color-vdykac);
+      color: var(--bricks-color-xdlngt);
+    }
+
+    #{ $self }__button {
+      color: var(--bricks-color-xdlngt);
+      background: transparent;
+      border: 1px solid var(--bricks-color-xdlngt);
+      &:hover {
+        background: var(--bricks-color-xdlngt);
+        color: var(--bricks-color-pewzcn);
+      }
+    }
+  }
+
+  &.is-dark {
+    #{ $self }__inner {
+      background: var(--bricks-color-gmgkyn);
+      color: var(--bricks-color-pewzcn);
+    }
+
+    #{ $self }__button {
+      color: var(--bricks-color-gmgkyn);
+      background: var(--bricks-color-pewzcn);
+      border: 1px solid var(--bricks-color-pewzcn);
+      &:hover {
+        background: transparent;
+        color: var(--bricks-color-pewzcn);
+      }
+    }
+  }
+
+  @include respond-max(tablet-portrait) {
+    grid-template-columns: 1fr;
+  }
+}
