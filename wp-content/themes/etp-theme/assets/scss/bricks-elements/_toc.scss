@@ -1,0 +1,101 @@
+@use "../base/mixins" as *;
+
+.etp-toc__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: #1a2341;
+  cursor: pointer;
+
+  .etp-toc__toggle-icon {
+    display: inline-flex;
+    transition: transform 0.2s ease;
+  }
+}
+
+.etp-toc__body {
+  overflow: hidden;
+  max-height: 2000px;
+  opacity: 1;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+}
+
+.etp-toc.is-collapsed {
+  .etp-toc__body {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .etp-toc__toggle-icon {
+    transform: rotate(-90deg);
+  }
+}
+
+.etp-toc {
+  font-size: var(--font-size-base);
+
+  padding-right: var(--spacing-xl);
+  padding-left: var(--spacing-xl);
+  @include respond-max(desktop) {
+    padding-right: var(--spacing-4xl);
+    padding-left: var(--spacing-4xl);
+  }
+
+  @include respond-max(mobile-landscape) {
+    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+  }
+
+  @include respond-max(mobile-portrait) {
+    padding-right: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+  }
+
+  &__menu-item {
+    border-left: 4px solid #15151526;
+    line-height: var(--line-height-140);
+    padding: var(--spacing-sm) var(--spacing-base);
+    font-weight: 600;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    
+    &.active,
+    &:hover {
+      border-left-color: #336DD5;
+      opacity: 1;
+    }
+  }
+
+  &__menu > ul > li:first-of-type {
+    border-left-color: #336DD5;
+    opacity: 1;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    color: #415171;
+    text-decoration: none;
+    font-size: var(--font-size-base);
+  }
+
+  ul ul li {
+    padding-left: var(--spacing-2xl);
+    font-weight: 400;
+  }
+}

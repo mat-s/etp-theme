@@ -246,9 +246,9 @@ Text Domain: etp-theme
   .etp-sidebar-container .sidebar-element {
     width: 25%;
     padding-right: 0;
+    margin-bottom: 360px;
   }
   .etp-sidebar-container .etp-cta-banner.sidebar-element {
-    margin-bottom: 360px;
     margin-top: 0;
   }
   .etp-sidebar-container .etp-cta-banner.sidebar-element .etp-cta-banner__inner {
@@ -623,5 +623,96 @@ Text Domain: etp-theme
 .etp-post-meta__share-icon {
   display: inline-flex;
   align-items: center;
+}
+
+.etp-toc__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: #1a2341;
+  cursor: pointer;
+}
+.etp-toc__toggle .etp-toc__toggle-icon {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+}
+
+.etp-toc__body {
+  overflow: hidden;
+  max-height: 2000px;
+  opacity: 1;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+}
+
+.etp-toc.is-collapsed .etp-toc__body {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.etp-toc.is-collapsed .etp-toc__toggle-icon {
+  transform: rotate(-90deg);
+}
+
+.etp-toc {
+  font-size: var(--font-size-base);
+  padding-right: var(--spacing-xl);
+  padding-left: var(--spacing-xl);
+}
+@media (max-width: 1280px) {
+  .etp-toc {
+    padding-right: var(--spacing-4xl);
+    padding-left: var(--spacing-4xl);
+  }
+}
+@media (max-width: 600px) {
+  .etp-toc {
+    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+  }
+}
+@media (max-width: 320px) {
+  .etp-toc {
+    padding-right: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+  }
+}
+.etp-toc__menu-item {
+  border-left: 4px solid rgba(21, 21, 21, 0.1490196078);
+  line-height: var(--line-height-140);
+  padding: var(--spacing-sm) var(--spacing-base);
+  font-weight: 600;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.etp-toc__menu-item.active, .etp-toc__menu-item:hover {
+  border-left-color: #336DD5;
+  opacity: 1;
+}
+.etp-toc__menu > ul > li:first-of-type {
+  border-left-color: #336DD5;
+  opacity: 1;
+}
+.etp-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.etp-toc li {
+  margin: 0;
+}
+.etp-toc a {
+  color: #415171;
+  text-decoration: none;
+  font-size: var(--font-size-base);
+}
+.etp-toc ul ul li {
+  padding-left: var(--spacing-2xl);
+  font-weight: 400;
 }
 /*# sourceMappingURL=style.css.map */

@@ -16,6 +16,14 @@ add_action('wp_enqueue_scripts', function () {
     [],
     $theme->get('Version')
   );
+
+  wp_enqueue_script(
+    'etp-theme',
+    get_stylesheet_directory_uri() . '/assets/js/main.js',
+    [],
+    $theme->get('Version'),
+    true
+  );
 });
 
 // Theme supports and basics.
@@ -26,6 +34,8 @@ add_action('after_setup_theme', function () {
   // Load modular theme functionality.
   $etp_includes = [
     'helpers.php',
+    'content-parser.php',
+    'toc-helper.php',
     'disable-comments.php',
     'bricks-setup.php',
   ];
